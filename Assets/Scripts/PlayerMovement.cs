@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 4f;
-    private float jumpingPower = 8f;
+    private float jumpingPower = 12f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Vector2 boxSize;
+    [SerializeField] private float castDistance;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
@@ -42,8 +44,20 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         //ground check
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        // return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
     }
 
     private void Flip()

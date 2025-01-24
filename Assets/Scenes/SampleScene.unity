@@ -521,6 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1593259130}
+  boxSize: {x: 0.69, y: 0.3}
+  castDistance: 0.54
   groundCheck: {fileID: 547922481}
   groundLayer:
     serializedVersion: 2
@@ -540,7 +542,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
