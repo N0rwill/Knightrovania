@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerCrouch playerCrouch;
+
     private float horizontal;
     private float speed;
     private float jumpingPower;
     private bool isFacingRight = true;
-    public bool isMoving;
+    private bool isMoving;
     private bool isGrounded;
     private Animator anim;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Vector2 boxSize;
+    [SerializeField] private Vector2 circleSize;
     [SerializeField] private float castDistance;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] public Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
     private void Start()
@@ -32,13 +35,11 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
 
         //jump if grounded
-        if(Input.GetButtonDown("Jump") && isGrounded == true)
+        if(Input.GetButtonDown("Jump") && isGrounded == true && playerCrouch.isCrouching == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             anim.Play("Jump");
         }
-
-        anim.SetFloat("AirSpeedY", rb.velocity.y);
 
         Flip();
         AnimationController();
@@ -47,8 +48,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //move player
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        //move player if not crouching
+        if(playerCrouch.isCrouching == false)
+        {
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        }
+
+        if (playerCrouch.isCrouching == true)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
     }
 
     private void GroundChecker()
@@ -85,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void AnimationController()
     {
+        anim.SetFloat("AirSpeedY", rb.velocity.y);
         isMoving = rb.velocity.x != 0;
         anim.SetBool("isMoving", isMoving);
     }

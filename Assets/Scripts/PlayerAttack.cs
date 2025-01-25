@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Animator anim;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown("z"))
+        {
+            Attack();
+        }
+    }
+
+    void Attack()
+    {
+        //Play attack animation
+        anim.Play("Attack3");
+        //Detect enemies in range of attack
+        //Damage the enemies
     }
 }
