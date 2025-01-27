@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public enemy enemy;
+
     [SerializeField] private Animator anim;
     [SerializeField] private Transform attackPos;
     [SerializeField] private Vector2 boxSize;
@@ -26,7 +28,8 @@ public class PlayerAttack : MonoBehaviour
         //Detect enemies in range of attack
         if (Physics2D.BoxCast(attackPos.transform.position, boxSize, 0, transform.right, castDistance,  enemyLayer))
         {
-            Debug.Log("Enemy Hit!");
+            //damage enemy
+            enemy.Hit();
         }
         
     }

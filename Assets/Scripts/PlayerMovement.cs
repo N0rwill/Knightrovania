@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //draws groundcheck gizmo
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
