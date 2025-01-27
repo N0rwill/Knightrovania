@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator anim;
+    [SerializeField] private Transform attackPos;
+    [SerializeField] private Vector2 boxSize;
+    [SerializeField] private float castDistance;
+    [SerializeField] private LayerMask enemyLayer;
 
     void Update()
     {
@@ -19,6 +24,15 @@ public class PlayerAttack : MonoBehaviour
         //Play attack animation
         anim.Play("Attack3");
         //Detect enemies in range of attack
-        //Damage the enemies
+        if (Physics2D.BoxCast(attackPos.transform.position, boxSize, 0, transform.right, castDistance,  enemyLayer))
+        {
+            Debug.Log("Enemy Hit!");
+        }
+        
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(attackPos.transform.position+transform.right * castDistance, boxSize);
     }
 }

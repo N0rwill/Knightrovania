@@ -17,9 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Vector2 boxSize;
-    [SerializeField] private Vector2 circleSize;
     [SerializeField] private float castDistance;
-    [SerializeField] public Transform groundCheck;
+    [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
     private void Start()
@@ -75,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-     private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
     }
