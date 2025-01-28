@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         Flip();
         AnimationController();
         GroundChecker();
-        EnemyCheck();
     }
 
     private void FixedUpdate()
@@ -96,23 +95,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void AnimationController()
     {
+        //set air speed in animator
         anim.SetFloat("AirSpeedY", rb.velocity.y);
+        //check if moving in animator
         isMoving = rb.velocity.x != 0;
         anim.SetBool("isMoving", isMoving);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //if hit game object with tag enemy run enemy hit script
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Entered collision with " + collision.gameObject.name);
             enemy.Hit();
         }
     }
-
-    private void EnemyCheck()
-    {
-
-    }
-
 }

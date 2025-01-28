@@ -17,10 +17,8 @@ public class enemy : MonoBehaviour
 
     void Update()
     {
-        //amage player
+        
     }
-
-    //damage player when it hits player
 
     //die when hit by player
     public void Hit()
@@ -33,14 +31,4 @@ public class enemy : MonoBehaviour
         //destroy after 2 seconds
         Destroy(this.gameObject, deathDelay);
     }
-
-    //check if enemy hits player
-    //void OnCollisionEnter(Collision col)
-    //{
-    //    if (CompareTag("Player"))
-    //    {
-    //        Debug.Log("col player");
-    //        Hit();
-    //    }
-    //}
 }

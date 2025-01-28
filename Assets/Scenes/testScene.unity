@@ -376,8 +376,20 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1863912598088825869, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2455519307227319617, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455519307227319617, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455519307227319617, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6416495377214072008, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
@@ -449,7 +461,7 @@ GameObject:
   - component: {fileID: 1593259129}
   - component: {fileID: 1593259133}
   - component: {fileID: 1593259132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -665,7 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39356d8a94f430408930d2c475e47ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1308156554}
+  enemy: {fileID: 0}
   anim: {fileID: 1593259131}
   attackPos: {fileID: 1744305069}
   boxSize: {x: 1.15, y: 0.5}
@@ -682,7 +694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744305069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

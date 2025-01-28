@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public enemy Enemy;
+    public enemy enemy;
 
     [SerializeField] private Animator anim;
     [SerializeField] private Transform attackPos;
@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        //press z run attack funtion
         if(Input.GetKeyDown("z"))
         {
             Attack();
@@ -29,11 +30,12 @@ public class PlayerAttack : MonoBehaviour
         if (Physics2D.BoxCast(attackPos.transform.position, boxSize, 0, transform.right, castDistance,  enemyLayer))
         {
             //damage enemy
-            Enemy.Hit();
+            enemy.Hit();
         }
         
     }
-
+    
+    //draw attack gizmo
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(attackPos.transform.position+transform.right * castDistance, boxSize);
