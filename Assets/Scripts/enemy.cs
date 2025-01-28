@@ -35,12 +35,12 @@ public class enemy : MonoBehaviour
     }
 
     //check if enemy hits player
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (CompareTag("Player"))
-        {
-            Debug.Log("player");
-            Hit();
-        }
-    }
+    //void OnCollisionEnter(Collision col)
+    //{
+    //    if (CompareTag("Player"))
+    //    {
+    //        Debug.Log("col player");
+    //        Hit();
+    //    }
+    //}
 }

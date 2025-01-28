@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerCrouch playerCrouch;
+    public enemy enemy;
 
     private float horizontal;
     private float speed;
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Flip();
         AnimationController();
         GroundChecker();
+        EnemyCheck();
     }
 
     private void FixedUpdate()
@@ -97,6 +99,20 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("AirSpeedY", rb.velocity.y);
         isMoving = rb.velocity.x != 0;
         anim.SetBool("isMoving", isMoving);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Entered collision with " + collision.gameObject.name);
+            enemy.Hit();
+        }
+    }
+
+    private void EnemyCheck()
+    {
+
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public enemy enemy;
+    public enemy Enemy;
 
     [SerializeField] private Animator anim;
     [SerializeField] private Transform attackPos;
@@ -29,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
         if (Physics2D.BoxCast(attackPos.transform.position, boxSize, 0, transform.right, castDistance,  enemyLayer))
         {
             //damage enemy
-            enemy.Hit();
+            Enemy.Hit();
         }
         
     }
