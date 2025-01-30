@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.RestService;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    private Animator anim;
-    private bool isDead;
-    private float deathDelay;
+    [SerializeField] private Animator anim;
+    private bool isDead = false;
 
-    void Awake()
+    void Start()
     {
-        anim = GetComponent<Animator>();
-        deathDelay = 2f;
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
     }
 
     void Update()
@@ -23,12 +24,12 @@ public class enemy : MonoBehaviour
     //die when hit by player
     public void Hit()
     {
-        //destroy enemy
-        Debug.Log("hit enemy");
-        //play death animation and set bool isDead to true
+        if (isDead) return;
+        Debug.Log("PLayer hit " + gameObject.name);
         isDead = true;
-        anim.SetBool("isDead", isDead);
-        //destroy after 2 seconds
-        Destroy(this.gameObject, deathDelay);
+        anim.SetTrigger("Die");
+        GetComponent<Collider>().enabled = false;
+        float deathAnimTime = anim.GetCurrentAnimatorStateInfo(0).length;
+        Destroy(gameObject, deathAnimTime);
     }
 }

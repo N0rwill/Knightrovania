@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7952206567683174051}
   m_Layer: 9
   m_Name: enemy_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ Animator:
   m_GameObject: {fileID: 6416495377214072008}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a600d77fa3f51247827df735ace132a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 670be7e22e2611340ad0298968ecd57e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -193,3 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166f0b2f479caae4d89f36b9e8debf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}

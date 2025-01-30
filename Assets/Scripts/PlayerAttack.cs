@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public enemy enemy;
-
     [SerializeField] private Animator anim;
     [SerializeField] private Transform attackPos;
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private float castDistance;
     [SerializeField] private LayerMask enemyLayer;
+    RaycastHit hit;
 
     void Update()
+
+
     {
         //press z run attack funtion
         if(Input.GetKeyDown("z"))
@@ -26,11 +27,16 @@ public class PlayerAttack : MonoBehaviour
     {
         //Play attack animation
         anim.Play("Attack3");
+
         //Detect enemies in range of attack
         if (Physics2D.BoxCast(attackPos.transform.position, boxSize, 0, transform.right, castDistance,  enemyLayer))
         {
+            Enemy enemy = hit.collider.GetComponent<Enemy>();
             //damage enemy
-            enemy.Hit();
+            if (enemy != null)
+            {
+                enemy.Hit();
+            }
         }
         
     }

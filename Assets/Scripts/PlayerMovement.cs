@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerCrouch playerCrouch;
-    public enemy enemy;
+    public Enemy enemy;
 
     private float horizontal;
     private float speed;
