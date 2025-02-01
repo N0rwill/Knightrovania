@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PlayerPause : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
-   public void Pause()
+    [SerializeField] GameObject PausePanel;
+    void Update()
     {
-        pauseMenu.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
+    }
+
+    public void Pause()
+    {
+        PausePanel.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void Resume()
     {
-        pauseMenu.SetActive(false);
+        PausePanel.SetActive(false);
         Time.timeScale = 1;
     }
 
