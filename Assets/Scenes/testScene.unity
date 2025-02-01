@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &549006829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &620420489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -500,6 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 620420488}
+  VolumePanel: {fileID: 621512688}
+  ControlPanel: {fileID: 1686115999}
+  BackButton: {fileID: 0}
 --- !u!114 &620420491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,6 +1834,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 620420488}
+  VolumePanel: {fileID: 0}
+  ControlPanel: {fileID: 0}
+  BackButton: {fileID: 0}
 --- !u!1 &1595502892
 GameObject:
   m_ObjectHideFlags: 0
