@@ -10,7 +10,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private float castDistance;
     [SerializeField] private LayerMask enemyLayer;
-    RaycastHit hit;
 
     void Update()
 
@@ -28,11 +27,13 @@ public class PlayerAttack : MonoBehaviour
         //Play attack animation
         anim.Play("Attack3");
 
-        //Detect enemies in range of attack
-        if (Physics2D.BoxCast(attackPos.transform.position, boxSize, 0, transform.right, castDistance,  enemyLayer))
+        //Detect all enemies in the attack range
+        Collider2D[] enemiesHit = Physics2D.OverlapBoxAll(attackPos.position + (Vector3)transform.right * castDistance, boxSize, 0, enemyLayer);
+        
+        //hit all enemies and run hit script
+        foreach (Collider2D hit in enemiesHit)
         {
-            Enemy enemy = hit.collider.GetComponent<Enemy>();
-            //damage enemy
+            Enemy enemy = hit.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.Hit();

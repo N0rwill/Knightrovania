@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerCrouch playerCrouch;
-    public PlayerHealth phealth;
 
     private float horizontal;
     private float speed;
