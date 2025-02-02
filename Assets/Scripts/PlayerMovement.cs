@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerCrouch playerCrouch;
-    public Enemy enemy;
+    public PlayerHealth phealth;
 
     private float horizontal;
     private float speed;
@@ -100,15 +100,5 @@ public class PlayerMovement : MonoBehaviour
         //check if moving in animator
         isMoving = rb.velocity.x != 0;
         anim.SetBool("isMoving", isMoving);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //if hit game object with tag enemy run enemy hit script
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Entered collision with " + collision.gameObject.name);
-            enemy.Hit();
-        }
     }
 }

@@ -955,6 +955,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7952206567683174051, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
+      propertyPath: phealth
+      value: 
+      objectReference: {fileID: 1593259135}
     - target: {fileID: 2455519307227319617, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1597,6 +1601,7 @@ GameObject:
   - component: {fileID: 1593259129}
   - component: {fileID: 1593259133}
   - component: {fileID: 1593259132}
+  - component: {fileID: 1593259135}
   - component: {fileID: 1593259134}
   m_Layer: 8
   m_Name: Player
@@ -1732,6 +1737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCrouch: {fileID: 1593259132}
   enemy: {fileID: -7952206567683174051, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
+  phealth: {fileID: 1593259135}
   rb: {fileID: 1593259130}
   boxSize: {x: 0.75, y: 0.3}
   castDistance: 0.03
@@ -1837,6 +1843,21 @@ MonoBehaviour:
   VolumePanel: {fileID: 0}
   ControlPanel: {fileID: 0}
   BackButton: {fileID: 0}
+--- !u!114 &1593259135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593259125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed916260cd6cda5458174deae4bf033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
+  maxHealth: 0
+  damage: 20
 --- !u!1 &1595502892
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 686020697716586604}
   - component: {fileID: 1863912598088825869}
   - component: {fileID: 2455519307227319617}
+  - component: {fileID: 8411800101470230438}
   - component: {fileID: 5701275013618317421}
   - component: {fileID: -7952206567683174051}
   m_Layer: 9
@@ -130,7 +131,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -147,7 +148,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07359183, y: 0.71998364}
+  m_Offset: {x: -0.07, y: 0.69}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -158,7 +159,52 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9963038, y: 1.3225344}
+  m_Size: {x: 1, y: 1.27}
+  m_EdgeRadius: 0
+--- !u!61 &8411800101470230438
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6416495377214072008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06999999, y: 0.69}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 3.125, y: 1.71875}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.27}
   m_EdgeRadius: 0
 --- !u!95 &5701275013618317421
 Animator:
@@ -193,4 +239,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166f0b2f479caae4d89f36b9e8debf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phealth: {fileID: 0}
   anim: {fileID: 0}
