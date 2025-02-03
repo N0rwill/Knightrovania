@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39356d8a94f430408930d2c475e47ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 7205743183377146525}
   anim: {fileID: 5613789842923609596}
   attackPos: {fileID: 8642869004894452539}
   boxSize: {x: 1.15, y: 0.5}
@@ -269,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965848e8ae5dea9428373ce68297e78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 7205743183377146525}
   isCrouching: 0
   anim: {fileID: 5613789842923609596}
   bc: {fileID: 7350576488571379960}

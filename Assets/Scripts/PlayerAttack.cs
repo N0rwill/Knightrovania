@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
+
     [SerializeField] private Animator anim;
     [SerializeField] private Transform attackPos;
     [SerializeField] private Vector2 boxSize;
@@ -16,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
 
     {
         //press z run attack funtion
-        if(Input.GetKeyDown("z"))
+        if(Input.GetKeyDown("z") && !playerHealth.playerDead)
         {
             Attack();
         }

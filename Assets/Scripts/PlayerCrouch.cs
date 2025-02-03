@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCrouch : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
     
     private float crouchHeight;
     private float normalHeight;
@@ -24,7 +25,7 @@ public class PlayerCrouch : MonoBehaviour
     }
     public void crouch()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !playerHealth.playerDead)
         {
             //Crouch
             bc.size = new Vector2(bc.size.x, crouchHeight);
@@ -39,7 +40,7 @@ public class PlayerCrouch : MonoBehaviour
             anim.SetBool("isCrouching", isCrouching);
         }
         
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.DownArrow) && !playerHealth.playerDead)
         {
             //stop crouching
             isCrouching = false;
@@ -47,6 +48,5 @@ public class PlayerCrouch : MonoBehaviour
             //iscrouching anim bool false
             anim.SetBool("isCrouching", !isCrouching);
         }
-
     }
 }

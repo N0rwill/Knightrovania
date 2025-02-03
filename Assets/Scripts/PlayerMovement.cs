@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         //flip player sprite
-        if(isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        if((isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) && !playerHealth.playerDead)
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;

@@ -256,6 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHurt: {fileID: -7952206567683174051}
+  mainCamera: {fileID: 3448413093585094802, guid: 59cf30369930a82489a5977f3f9c21f4, type: 3}
+  despawnDistanceX: 15
+  despawnDistanceY: 15
   player: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
   rb: {fileID: 1863912598088825869}
   moveSpeed: 2

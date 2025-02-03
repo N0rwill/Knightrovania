@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject enemy_1Prefab;
     public Transform player;
     public float spawnDistance;
     public float spawnDelay;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         //set spawn point
         Vector3 spawnPosition = player.position + Vector3.right * spawnDistance;
         //spawn
-        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        GameObject enemy = Instantiate(enemy_1Prefab, spawnPosition, Quaternion.identity);
         
         // Make the enemy face the player
         Vector3 direction = (player.position - enemy.transform.position).normalized;

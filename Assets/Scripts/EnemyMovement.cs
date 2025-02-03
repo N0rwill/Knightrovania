@@ -7,6 +7,9 @@ public class EnemyMovement : MonoBehaviour
 {
     public EnemyHurt enemyHurt;
 
+    public Camera mainCamera;
+    public float despawnDistanceX = 15f;
+    public float despawnDistanceY = 15f;
     public Transform player;
     private bool isMoving;
     private Animator anim;
@@ -18,11 +21,18 @@ public class EnemyMovement : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+            Debug.Log("cam set");
+        }
     }
 
     void Update()
     {
         AnimationController();
+        Despawn();
     }
 
     void FixedUpdate()
@@ -45,5 +55,19 @@ public class EnemyMovement : MonoBehaviour
         //check if moving in animator
         isMoving = rb.velocity.x != 0;
         anim.SetBool("isMoving", isMoving);
+    }
+
+    void Despawn()
+    {
+        if (mainCamera != null)
+        {
+            float distanceX = Mathf.Abs(transform.position.x - mainCamera.transform.position.x);
+            float distanceY = Mathf.Abs(transform.position.y - mainCamera.transform.position.y);
+            
+            if (distanceX >= despawnDistanceX || distanceY >= despawnDistanceY)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
