@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCrouch: {fileID: 5362680823179969155}
+  playerHealth: {fileID: 7205743183377146525}
   rb: {fileID: 4647786335212963409}
   boxSize: {x: 0.75, y: 0.3}
   castDistance: 0.03
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 4054587171288199523}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -283,9 +284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed916260cd6cda5458174deae4bf033c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 156823071151550493}
   playerHealth: 100
   maxHealth: 0
   damage: 20
+  playerDead: 0
 --- !u!114 &5308483248257754063
 MonoBehaviour:
   m_ObjectHideFlags: 0

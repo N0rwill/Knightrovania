@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public PlayerMovement playerMovement;
+
     public float playerHealth;
     public float maxHealth;
     public float damage = 10f;
-    private bool playerDead;
+    public bool playerDead;
     private Animator anim;
 
     void Start()
@@ -28,11 +30,16 @@ public class PlayerHealth : MonoBehaviour
     {
         if (playerDead != true)
         {
-            playerHealth -= damage;
+            if (playerHealth > 0)
+            {
+                playerHealth -= damage;
+                playerMovement.knockback();
+            }
 
             if (playerHealth <= 0)
             {
                 playerDead = true;
+                playerMovement.Dead();
                 anim.SetTrigger("Die");
             }
         }

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerCrouch playerCrouch;
+    public PlayerHealth playerHealth;
 
     private float horizontal;
     private float speed;
@@ -13,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private bool isMoving;
     private bool isGrounded;
+    private bool isStunned;
     private Animator anim;
 
     [SerializeField] private Rigidbody2D rb;
@@ -34,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
 
         //jump if grounded
-        if(Input.GetButtonDown("Jump") && isGrounded == true && playerCrouch.isCrouching == false)
+        if(Input.GetButtonDown("Jump") && isGrounded && !isStunned && !playerCrouch.isCrouching && !playerHealth.playerDead)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             anim.Play("Jump");
@@ -48,12 +52,12 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //move player if not crouching
-        if(playerCrouch.isCrouching == false)
+        if(!isStunned && !playerCrouch.isCrouching && !playerHealth.playerDead)
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
 
-        if (playerCrouch.isCrouching == true)
+        if (playerCrouch.isCrouching)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
@@ -99,5 +103,28 @@ public class PlayerMovement : MonoBehaviour
         //check if moving in animator
         isMoving = rb.velocity.x != 0;
         anim.SetBool("isMoving", isMoving);
+    }
+
+    public void knockback()
+    {
+        if (!playerHealth.playerDead)
+        {
+        StartCoroutine(StunPlayer(0.44f));
+        anim.SetTrigger("Hurt");
+        }
+    }
+
+    IEnumerator StunPlayer(float duration)
+    {
+        isStunned = true;
+        rb.velocity = Vector2.zero;
+        rb.velocity = new Vector2(-0.5f, 2f) * speed;
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+    }
+
+    public void Dead()
+    {
+        rb.velocity = Vector2.zero;
     }
 }
