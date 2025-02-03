@@ -194,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06999999, y: 0.69}
+  m_Offset: {x: -0.07, y: 0.69}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166f0b2f479caae4d89f36b9e8debf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phealth: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
-  movementSpeed: -2
-  anim: {fileID: 0}
+  anim: {fileID: 5701275013618317421}
+  rb: {fileID: 1863912598088825869}
+  isDead: 0
 --- !u!114 &4163060345037239374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,4 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1d5c4ce201ea848930d3855615f6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  enemyHurt: {fileID: -7952206567683174051}
+  player: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+  rb: {fileID: 1863912598088825869}
+  moveSpeed: 2
+  hitBox: {fileID: 8411800101470230438}

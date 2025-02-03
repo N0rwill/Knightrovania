@@ -1031,75 +1031,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832286188}
   m_CullTransparentMesh: 1
---- !u!1001 &926568542
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -7952206567683174051, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: phealth
-      value: 
-      objectReference: {fileID: 1593259135}
-    - target: {fileID: 2455519307227319617, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5701275013618317421, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 670be7e22e2611340ad0298968ecd57e, type: 2}
-    - target: {fileID: 6416495377214072008, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_Name
-      value: enemy_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0027338143
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100065500241619661, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
 --- !u!1 &1140446176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,17 +1548,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
   m_PrefabInstance: {fileID: 8389193999115372894}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1593259135 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
-  m_PrefabInstance: {fileID: 8389193999115372894}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed916260cd6cda5458174deae4bf033c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1595502892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +1894,7 @@ MonoBehaviour:
   player: {fileID: 1593259128}
   spawnDistance: 10
   spawnDelay: 5
-  individualSpawnDelay: 1
+  individualSpawnDelay: 0.5
 --- !u!4 &2025720084
 Transform:
   m_ObjectHideFlags: 0
@@ -2336,6 +2256,5 @@ SceneRoots:
   - {fileID: 235231197}
   - {fileID: 310622637}
   - {fileID: 2107790200}
-  - {fileID: 926568542}
   - {fileID: 764159467}
   - {fileID: 1140446177}

@@ -1,31 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public EnemyHurt enemyHurt;
 
-    void Start()
+    public Transform player;
+    private bool isMoving;
+    private Animator anim;
+
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] float moveSpeed;
+    [SerializeField] private BoxCollider2D hitBox;
+
+    void Awake()
     {
-
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        AnimationController();
     }
-    // [SerializeField] private Rigidbody2D rb;
-    // private float dirx;
-    // private float moveSpeed = 2f;
 
-    // void Start()
-    // {
-        
-    // }
+    void FixedUpdate()
+    {
+        //if enemy not dead
+        if (enemyHurt.isDead != true)
+        {
+            rb.velocity = new Vector2(-1, rb.velocity.y) * moveSpeed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+            hitBox.enabled = false;
+        }
+    }
 
-    // void FixedUpdate()
-    // {
-    //     rb.velocity = new Vector2(dirx * moveSpeed, rb.velocity.y);
-    // }
+    private void AnimationController()
+    {
+        //check if moving in animator
+        isMoving = rb.velocity.x != 0;
+        anim.SetBool("isMoving", isMoving);
+    }
 }
