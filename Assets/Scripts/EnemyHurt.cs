@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.RestService;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyHurt : MonoBehaviour
 {
     public PlayerHealth phealth;
 
@@ -32,21 +32,5 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Die");
         float deathAnimTime = anim.GetCurrentAnimatorStateInfo(0).length;
         Destroy(gameObject, deathAnimTime);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //if hit game object with tag enemy run enemy hit script
-        
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Entered collision with " + col.gameObject.name);
-            Hit();
-            phealth.Hurt();
-        }
     }
 }

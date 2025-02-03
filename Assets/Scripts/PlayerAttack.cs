@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
         //hit all enemies and run hit script
         foreach (Collider2D hit in enemiesHit)
         {
-            Enemy enemy = hit.GetComponent<Enemy>();
+            EnemyHurt enemy = hit.GetComponent<EnemyHurt>();
             if (enemy != null)
             {
                 enemy.Hit();
