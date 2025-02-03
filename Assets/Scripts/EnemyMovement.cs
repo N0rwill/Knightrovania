@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         //if enemy not dead
-        if (enemyHurt.isDead != true)
+        if (!enemyHurt.isDead)
         {
             rb.velocity = new Vector2(-1, rb.velocity.y) * moveSpeed;
         }
