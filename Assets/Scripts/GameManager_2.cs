@@ -7,6 +7,7 @@ public class GameManager_2 : MonoBehaviour
     public GameObject enemy_2Prefab;
     public Transform player;
     public float spawnDistance;
+    public float spawnDistanceUp;
     public float spawnDelay;
     public float individualSpawnDelay;
 
@@ -20,7 +21,7 @@ public class GameManager_2 : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
                 SpawnEnemy1();
                 //wait half a second to spawn next
@@ -35,7 +36,7 @@ public class GameManager_2 : MonoBehaviour
         if (player == null) return;
 
         //set spawn point
-        Vector3 spawnPosition = player.position + Vector3.right * spawnDistance;
+        Vector3 spawnPosition = player.position + Vector3.right * spawnDistance + Vector3.up * spawnDistanceUp;
         //spawn
         GameObject enemy = Instantiate(enemy_2Prefab, spawnPosition, Quaternion.identity);
 
