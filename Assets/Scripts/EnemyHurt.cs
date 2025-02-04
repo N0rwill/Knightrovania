@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Callbacks;
-using UnityEditor.Experimental.RestService;
 using UnityEngine;
 
 public class EnemyHurt : MonoBehaviour

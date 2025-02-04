@@ -171,7 +171,7 @@ Animator:
   m_GameObject: {fileID: 8791552712828734870}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8155e5e614d4c3b4cb703b77c436df19, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -216,5 +216,4 @@ MonoBehaviour:
   horizontalSpeed: 2
   verticalRange: 0.44
   rb: {fileID: 4324869165755701462}
-  moveSpeed: 2
   hitBox: {fileID: 5062823268116552059}

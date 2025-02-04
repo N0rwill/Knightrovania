@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
 
         //jump if grounded
-        if(Input.GetButtonDown("Jump") && isGrounded && !isStunned && !playerCrouch.isCrouching && !playerHealth.playerDead)
+        if (Input.GetButtonDown("Jump") && isGrounded && !isStunned && !playerCrouch.isCrouching && !playerHealth.playerDead)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             anim.Play("Jump");
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //move player if not crouching
-        if(!isStunned && !playerCrouch.isCrouching && !playerHealth.playerDead)
+        if (!isStunned && !playerCrouch.isCrouching && !playerHealth.playerDead)
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         //flip player sprite
-        if((isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) && !playerHealth.playerDead)
+        if ((isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) && !playerHealth.playerDead)
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;

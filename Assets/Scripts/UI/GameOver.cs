@@ -7,7 +7,7 @@ public class GameOver : MonoBehaviour
 {
   public void restartbutton()
     {
-        SceneManager.LoadScene("testScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
 
