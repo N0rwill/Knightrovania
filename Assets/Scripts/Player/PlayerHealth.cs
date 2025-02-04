@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] GameObject GameOverScreen;
     public PlayerMovement playerMovement;
 
     public float playerHealth;
@@ -40,6 +41,8 @@ public class PlayerHealth : MonoBehaviour
                 playerDead = true;
                 playerMovement.Dead();
                 anim.SetTrigger("Die");
+                GameOverScreen.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
