@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy_1Movement : MonoBehaviour
 {
     public EnemyHurt enemyHurt;
 
