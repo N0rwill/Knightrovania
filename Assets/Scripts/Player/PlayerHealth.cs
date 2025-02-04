@@ -33,7 +33,6 @@ public class PlayerHealth : MonoBehaviour
             if (playerHealth > 0)
             {
                 playerHealth -= damage;
-                playerMovement.knockback();
             }
 
             if (playerHealth <= 0)
@@ -42,19 +41,6 @@ public class PlayerHealth : MonoBehaviour
                 playerMovement.Dead();
                 anim.SetTrigger("Die");
             }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Enemy"))
-        {
-            EnemyHurt enemy = col.GetComponent<EnemyHurt>();
-            if (enemy != null)
-            {
-                enemy.Hit();
-            }
-            Hurt();
         }
     }
 }

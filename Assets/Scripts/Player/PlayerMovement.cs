@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isStunned;
     private Animator anim;
 
+    public Transform enemyDirection;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private float castDistance;
@@ -105,20 +107,60 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isMoving", isMoving);
     }
 
-    public void knockback()
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            EnemyHurt enemy = col.GetComponent<EnemyHurt>();
+            if (enemy != null)
+            {
+                enemy.Hit();
+                enemyDirection = col.GetComponent<Transform>();
+                if (enemyDirection.transform.position.x > transform.position.x)
+                {
+                    knockbackLeft();
+                }
+                if (enemyDirection.transform.position.x < transform.position.x)
+                {
+                    knockbackRight();
+                }
+            }
+            playerHealth.Hurt();
+        }
+    }
+
+    public void knockbackLeft()
     {
         if (!playerHealth.playerDead)
         {
-        StartCoroutine(StunPlayer(0.44f));
+        StartCoroutine(StunPlayerLeft(0.44f));
         anim.SetTrigger("Hurt");
         }
     }
 
-    IEnumerator StunPlayer(float duration)
+    IEnumerator StunPlayerLeft(float duration)
     {
         isStunned = true;
         rb.velocity = Vector2.zero;
         rb.velocity = new Vector2(-0.5f, 2f) * speed;
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+    }
+
+    public void knockbackRight()
+    {
+        if (!playerHealth.playerDead)
+        {
+            StartCoroutine(StunPlayerRight(0.44f));
+            anim.SetTrigger("Hurt");
+        }
+    }
+
+    IEnumerator StunPlayerRight(float duration)
+    {
+        isStunned = true;
+        rb.velocity = Vector2.zero;
+        rb.velocity = new Vector2(0.5f, 2f) * speed;
         yield return new WaitForSeconds(duration);
         isStunned = false;
     }
