@@ -24,7 +24,7 @@ public class Enemy_2Movement : MonoBehaviour
 
     void Awake()
     {
-        startPosition = transform.position;
+        startPosition = player.transform.position;
         anim = GetComponent<Animator>();
 
         if (mainCamera == null)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager_2 : MonoBehaviour
 {
     public GameObject enemy_2Prefab;
-    public Transform player;
+    [SerializeField]private Transform player;
     public float spawnDistance;
     public float spawnDistanceUp;
     public float spawnDelay;
@@ -14,6 +14,11 @@ public class GameManager_2 : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemiesLoop1());
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     //make 3 enemies spawn after delay
@@ -36,7 +41,9 @@ public class GameManager_2 : MonoBehaviour
         if (player == null) return;
 
         //set spawn point
-        Vector3 spawnPosition = player.position + Vector3.right * spawnDistance + Vector3.up * spawnDistanceUp;
+        Vector3 spawnPosition = player.position + Vector3.right * spawnDistance;
+        Debug.Log("spawn position set");
+
         //spawn
         GameObject enemy = Instantiate(enemy_2Prefab, spawnPosition, Quaternion.identity);
 
