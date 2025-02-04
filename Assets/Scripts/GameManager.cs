@@ -15,17 +15,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemiesLoop());
+        StartCoroutine(SpawnEnemiesLoop1());
     }
 
     //make 3 enemies spawn after delay
-    IEnumerator SpawnEnemiesLoop()
+    IEnumerator SpawnEnemiesLoop1()
     {
         while (true)
         {
             for (int i = 0; i < 3; i++)
             {
-                SpawnEnemy();
+                SpawnEnemy1();
                 //wait half a second to spawn next
                 yield return new WaitForSeconds(individualSpawnDelay);
             }
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy1()
     {
         if (player == null) return;
 
