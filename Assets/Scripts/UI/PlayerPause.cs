@@ -8,7 +8,8 @@ public class PlayerPause : MonoBehaviour
     [SerializeField] GameObject PausePanel;
     [SerializeField] GameObject VolumePanel;
     [SerializeField] GameObject ControlPanel;
-    [SerializeField] GameObject BackButton;
+    [SerializeField] GameObject VolumeBackButton;
+    [SerializeField] GameObject ControlsBackButton;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
