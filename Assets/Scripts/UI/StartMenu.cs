@@ -7,6 +7,6 @@ public class StartMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("testScene");
+        SceneManager.LoadSceneAsync("Room_1");
     }
 }
