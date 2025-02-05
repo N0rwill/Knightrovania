@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1234358682387577956, guid: f683178b70fcb6544b6613d211c0febc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.801943
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 1234358682387577956, guid: f683178b70fcb6544b6613d211c0febc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -346,11 +346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1234358682387577956, guid: f683178b70fcb6544b6613d211c0febc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.019192576
+      value: -1.83
       objectReference: {fileID: 0}
     - target: {fileID: 1234358682387577956, guid: f683178b70fcb6544b6613d211c0febc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.18
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 1234358682387577956, guid: f683178b70fcb6544b6613d211c0febc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -384,9 +384,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3354685781660965798, guid: f683178b70fcb6544b6613d211c0febc, type: 3}
-      propertyPath: m_Name
-      value: JumpThroughPlatform
+    - target: {fileID: 6456950888632159061, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456950888632159061, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.0983605
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.393442
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
