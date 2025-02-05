@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2511250508110301347}
   - component: {fileID: 4080063506894743101}
   - component: {fileID: 1856529898789405072}
-  - component: {fileID: 1045004848716438204}
+  - component: {fileID: -1445639401124460900}
   m_Layer: 9
   m_Name: enemy_3
   m_TagString: Enemy
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 553b21cb7092ed048bdc32af1d7fe9eb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2252174329722718619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   anim: {fileID: 4080063506894743101}
   rb: {fileID: 107406044105131156}
   isDead: 0
---- !u!114 &1045004848716438204
+--- !u!114 &-1445639401124460900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,6 +252,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065055544365598297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f1ce2528e1b35428a9092baf09bc8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d07118bee45004fbc0ea6a1d6eabdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHurt: {fileID: 1856529898789405072}
+  player: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+  mainCamera: {fileID: 3448413093585094802, guid: 59cf30369930a82489a5977f3f9c21f4, type: 3}
+  speed: 1
+  rb: {fileID: 107406044105131156}
+  hitBox: {fileID: 2511250508110301347}

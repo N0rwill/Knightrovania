@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager_2 : MonoBehaviour
 {
     public GameObject enemy_2Prefab;
-    [SerializeField]private Transform player;
+    [SerializeField] private Transform player;
     public float spawnDistance;
     public float spawnDistanceUp;
     public float spawnDelay;
@@ -16,11 +16,6 @@ public class GameManager_2 : MonoBehaviour
         StartCoroutine(SpawnEnemiesLoop1());
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     //make 3 enemies spawn after delay
     IEnumerator SpawnEnemiesLoop1()
     {
@@ -28,7 +23,7 @@ public class GameManager_2 : MonoBehaviour
         {
             for (int i = 0; i < 2; i++)
             {
-                SpawnEnemy1();
+                SpawnEnemy();
                 //wait half a second to spawn next
                 yield return new WaitForSeconds(individualSpawnDelay);
             }
@@ -36,7 +31,7 @@ public class GameManager_2 : MonoBehaviour
         }
     }
 
-    void SpawnEnemy1()
+    void SpawnEnemy()
     {
         if (player == null) return;
 
