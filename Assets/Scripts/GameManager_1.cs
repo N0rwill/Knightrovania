@@ -25,7 +25,7 @@ public class GameManager_1 : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
-                SpawnEnemy1();
+                SpawnEnemy();
                 //wait half a second to spawn next
                 yield return new WaitForSeconds(individualSpawnDelay);
             }
@@ -33,7 +33,7 @@ public class GameManager_1 : MonoBehaviour
         }
     }
 
-    void SpawnEnemy1()
+    void SpawnEnemy()
     {
         if (player == null) return;
 

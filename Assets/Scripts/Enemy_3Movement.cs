@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Enemy_2Movement : MonoBehaviour
+public class Enemy_3Movement : MonoBehaviour
 {
     public EnemyHurt enemyHurt;
 
-    public Camera mainCamera;
     public Transform player;
-    public float verticalSpeed = 3f;
-    public float horizontalSpeed = 2f;
-    public float verticalRange = 0.44f;
 
-    private Vector3 startPosition;
-    private float verticalOffset;
+    public Camera mainCamera;
     private float despawnDistanceX = 15f;
     private float despawnDistanceY = 15f;
+
+    public float speed;
+    private float playerPos;
+    private float enemyPos;
+
     private bool isMoving;
     private Animator anim;
 
@@ -25,13 +26,13 @@ public class Enemy_2Movement : MonoBehaviour
 
     void Awake()
     {
-        startPosition = player.transform.position;
         anim = GetComponent<Animator>();
+        playerPos = player.transform.position.x;
+        enemyPos = transform.position.x;
 
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
-            Debug.Log("cam set");
         }
     }
 
@@ -43,17 +44,18 @@ public class Enemy_2Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if enemy not dead
         if (!enemyHurt.isDead)
         {
-            // Move the enemy to the left
-            transform.position += Vector3.left * horizontalSpeed * Time.deltaTime;
-
-            // Calculate the vertical oscillation (up and down)
-            verticalOffset = Mathf.Sin(Time.time * verticalSpeed) * verticalRange;
-
-            // Update the vertical position
-            transform.position = new Vector3(transform.position.x, startPosition.y + verticalOffset, transform.position.z);
+            if (enemyPos < playerPos)
+            {
+                //move right
+                rb.velocity = new Vector2(1 * speed, rb.velocity.y);
+            }
+            if (enemyPos > playerPos)
+            {
+                //move left
+                rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
+            }
         }
         else
         {
