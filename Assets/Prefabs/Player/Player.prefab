@@ -70,6 +70,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8642869004894452539}
+  - {fileID: 7880407475675470801}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5870764762389212140
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCrouch: {fileID: 5362680823179969155}
   playerHealth: {fileID: 7205743183377146525}
+  enemyDirection: {fileID: 0}
   rb: {fileID: 4647786335212963409}
   boxSize: {x: 0.75, y: 0.3}
   castDistance: 0.03
@@ -258,6 +260,12 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
+  mainCamera: {fileID: 3448413093585094802, guid: 59cf30369930a82489a5977f3f9c21f4, type: 3}
+  weaponPrefab: {fileID: 494702708886322711, guid: b66ebf3951f422f4983936650591884b, type: 3}
+  throwPoint: {fileID: 7880407475675470801}
+  throwForce: 8
+  throwAngle: 65
+  throwCooldown: 1
 --- !u!114 &5362680823179969155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed916260cd6cda5458174deae4bf033c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverScreen: {fileID: 0}
   playerMovement: {fileID: 156823071151550493}
   playerHealth: 100
   maxHealth: 0
@@ -307,3 +316,34 @@ MonoBehaviour:
   VolumePanel: {fileID: 0}
   ControlPanel: {fileID: 0}
   BackButton: {fileID: 0}
+--- !u!1 &7186448538868141105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7880407475675470801}
+  m_Layer: 0
+  m_Name: throwPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7880407475675470801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7186448538868141105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4054587171288199523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
