@@ -21,9 +21,9 @@ public class PlayerCrouch : MonoBehaviour
 
     void Update()
     {
-        crouch();  
+        Crouch();  
     }
-    public void crouch()
+    public void Crouch()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow) && !playerHealth.playerDead)
         {
