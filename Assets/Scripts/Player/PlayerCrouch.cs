@@ -15,8 +15,8 @@ public class PlayerCrouch : MonoBehaviour
 
     void Start()
     {
-        crouchHeight = 0.65f;
-        normalHeight = 1.3f;
+        crouchHeight = 1.5f;
+        normalHeight = 3f;
     }
 
     void Update()
