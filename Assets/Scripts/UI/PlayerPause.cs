@@ -37,6 +37,7 @@ public class PlayerPause : MonoBehaviour
     public void Sound()
     {
         VolumePanel.SetActive(true);
+        PausePanel.SetActive(false);
     }
 
     public void Restart()
@@ -52,6 +53,7 @@ public class PlayerPause : MonoBehaviour
     public void ReturnVolume()
     {
         VolumePanel.SetActive(false);
+        PausePanel.SetActive(true);
     }
 
     public void ReturnControl()
