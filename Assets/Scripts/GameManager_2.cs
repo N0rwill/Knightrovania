@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager_2 : MonoBehaviour
 {
     public GameObject enemy_2Prefab;
-    [SerializeField]private Transform player;
+    [SerializeField] private Transform player;
     public float spawnDistance;
     public float spawnDistanceUp;
     public float spawnDelay;

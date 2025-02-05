@@ -13,24 +13,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float castDistance;
     [SerializeField] private LayerMask enemyLayer;
 
-    public Camera mainCamera;
-    public float despawnDistanceX = 15f;
-    public float despawnDistanceY = 10f;
-
     [SerializeField] private GameObject weaponPrefab;
     [SerializeField] private Transform throwPoint;
-    public float throwForce = 5f;
-    public float throwAngle = 20f;
+    public float throwForce;
+    public float throwAngle;
     private bool canThrow = true;
     public float throwCooldown = 1f;
-
-    void Awake()
-    {
-        if (mainCamera == null)
-        {
-            mainCamera = Camera.main;
-        }
-    }
 
     void Update()
     {
@@ -44,7 +32,6 @@ public class PlayerAttack : MonoBehaviour
         {
             AttackThrow();
         }
-        Despawn();
     }
 
     void Attack()
@@ -76,6 +63,8 @@ public class PlayerAttack : MonoBehaviour
     {
         if (weaponPrefab == null || throwPoint == null) return;
 
+        anim.Play("Throw");
+
         canThrow = false;
         StartCoroutine(ResetThrowCooldown());
 
@@ -95,19 +84,5 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(throwCooldown);
         canThrow = true;
-    }
-
-    void Despawn()
-    {
-        if (mainCamera != null)
-        {
-            float distanceX = Mathf.Abs(transform.position.x - mainCamera.transform.position.x);
-            float distanceY = Mathf.Abs(transform.position.y - mainCamera.transform.position.y);
-            
-            if (distanceX >= despawnDistanceX || distanceY >= despawnDistanceY)
-            {
-                Destroy(gameObject);
-            }
-        }
     }
 }
