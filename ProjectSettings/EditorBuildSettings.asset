@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/testScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu Scenes/startScreen.unity
     guid: 695a2e82644d6124eaed89c0cd70fb3b
-  - enabled: 0
-    path: Assets/Scenes/Menu Scenes/pauseScreen.unity
-    guid: 4b1a361a350ec7c4186955d98eea27ae
-  - enabled: 0
-    path: Assets/Scenes/Menu Scenes/Sound.unity
-    guid: 69003741121efa94db51246059d8e134
-  - enabled: 0
-    path: Assets/Scenes/Menu Scenes/Controls.unity
-    guid: d831506e0388bb743852600303d6deeb
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room_1.unity
+    guid: e3f6e6af52b9278438720e178a6f0929
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room_2.unity
+    guid: 154d4e9dbeb577540b43c850b4ffbdcc
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room_3.unity
+    guid: 7cf6944be920e0c4d9dc5de0aa704c12
   m_configObjects: {}
