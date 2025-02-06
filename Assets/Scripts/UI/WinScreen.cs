@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class WinScreen : MonoBehaviour
 {
     [SerializeField] GameObject GameWinScreen;
-    void WinScreenActive(Collider2D Player)
+    public void WinScreenActive(Collider2D Player)
     {
         Time.timeScale = 0;
         GameWinScreen.SetActive(true);
