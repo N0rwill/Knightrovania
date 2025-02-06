@@ -683,6 +683,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1819255594994770592, guid: f0cb0cde16d55084aafd8c959057fbd8, type: 3}
   m_PrefabInstance: {fileID: 720252972}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &475852011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+  m_PrefabInstance: {fileID: 1064311609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &483880748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1819255594994770592, guid: f0cb0cde16d55084aafd8c959057fbd8, type: 3}
@@ -1221,9 +1226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_2Prefab: {fileID: 8791552712828734870, guid: ae39a34faa02c054099d31d55d2252c0, type: 3}
-  player: {fileID: 0}
-  spawnDistance: 10
-  spawnDistanceUp: 4
+  player: {fileID: 475852011}
+  spawnDistance: 20
+  spawnDistanceUp: 3
   spawnDelay: 4
   individualSpawnDelay: 2
 --- !u!4 &804335441
@@ -1831,19 +1836,19 @@ PrefabInstance:
       objectReference: {fileID: 1972035670}
     - target: {fileID: 6456950888632159061, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.362136
+      value: -9.7775955
       objectReference: {fileID: 0}
     - target: {fileID: 6456950888632159061, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.8013535
+      value: 6.803068
       objectReference: {fileID: 0}
     - target: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.362136
+      value: 9.7775955
       objectReference: {fileID: 0}
     - target: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.342337
+      value: -2.344052
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

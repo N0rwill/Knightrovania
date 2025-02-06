@@ -46,16 +46,9 @@ public class Enemy_3Movement : MonoBehaviour
     {
         if (!enemyHurt.isDead)
         {
-            if (enemyPos < playerPos)
-            {
-                //move right
-                rb.velocity = new Vector2(1 * speed, rb.velocity.y);
-            }
-            if (enemyPos > playerPos)
-            {
-                //move left
-                rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
-            }
+            //move right
+            rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
+            
         }
         else
         {
@@ -76,8 +69,9 @@ public class Enemy_3Movement : MonoBehaviour
     {
         if (mainCamera != null)
         {
-            float distanceX = Mathf.Abs(transform.position.x - mainCamera.transform.position.x);
-            float distanceY = Mathf.Abs(transform.position.y - mainCamera.transform.position.y);
+            player = gameObject.GetComponent<Transform>();   
+            float distanceX = Mathf.Abs(transform.position.x - player.position.x);
+            float distanceY = Mathf.Abs(transform.position.y - player.position.y);
 
             if (distanceX >= despawnDistanceX || distanceY >= despawnDistanceY)
             {
