@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] GameObject GameOverScreen;
+    [SerializeField] HealthBar healthBar;
     public PlayerMovement playerMovement;
 
     public float playerHealth;
@@ -14,12 +15,18 @@ public class PlayerHealth : MonoBehaviour
     public bool playerDead;
     private Animator anim;
 
+    private void Awake()
+    {
+        healthBar = GetComponentInChildren<HealthBar>();
+    }
     void Start()
     {
         playerDead = false;
         playerHealth = 100f;
         maxHealth = playerHealth;
         anim = GetComponent<Animator>();
+
+        healthBar.UpdateHealthBar(playerHealth, maxHealth);
     }
 
     void Update()
@@ -34,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
             if (playerHealth > 0)
             {
                 playerHealth -= damage;
+                healthBar.UpdateHealthBar(playerHealth, maxHealth);
             }
 
             if (playerHealth <= 0)
