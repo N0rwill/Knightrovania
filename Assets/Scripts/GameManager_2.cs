@@ -10,10 +10,17 @@ public class GameManager_2 : MonoBehaviour
     public float spawnDistanceUp;
     public float spawnDelay;
     public float individualSpawnDelay;
+    Vector3 spawnPosition;
 
     void Start()
     {
         StartCoroutine(SpawnEnemiesLoop1());
+    }
+
+    void FixedUpdate()
+    {
+        //set spawn point
+        spawnPosition = player.position + Vector3.right * spawnDistance;
     }
 
     //make 3 enemies spawn after delay

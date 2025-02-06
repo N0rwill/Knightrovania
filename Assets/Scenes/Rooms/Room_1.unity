@@ -4801,7 +4801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6714,9 +6714,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_1Prefab: {fileID: 6416495377214072008, guid: 271e2b60560b6b640817f130bf563c33, type: 3}
   player: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
-  spawnDistance: 10
+  spawnDistance: 65
   spawnDelay: 5
   individualSpawnDelay: 0.5
+  mainCam: {fileID: 2123395671}
 --- !u!4 &1288154170
 Transform:
   m_ObjectHideFlags: 0
@@ -10865,6 +10866,11 @@ CanvasRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1819255594994770592, guid: f0cb0cde16d55084aafd8c959057fbd8, type: 3}
   m_PrefabInstance: {fileID: 1289460245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2123395671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+  m_PrefabInstance: {fileID: 869658423}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2133517545
 PrefabInstance:
