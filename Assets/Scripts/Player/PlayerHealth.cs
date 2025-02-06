@@ -14,6 +14,11 @@ public class PlayerHealth : MonoBehaviour
     public bool playerDead;
     private Animator anim;
 
+    public AudioSource hurtAudSource;
+    public AudioClip hurtAud;
+    public AudioSource deathAudSoure;
+    public AudioClip deathAud;
+
     void Start()
     {
         playerDead = false;
@@ -22,17 +27,13 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void Hurt()
     {
         if (playerDead != true)
         {
             if (playerHealth > 0)
             {
+                hurtAudSource.PlayOneShot(hurtAud);
                 playerHealth -= damage;
             }
 
@@ -40,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 playerDead = true;
                 playerMovement.Dead();
+                deathAudSoure.PlayOneShot(deathAud);
                 anim.SetTrigger("Die");
                 GameOverScreen.SetActive(true);
                 Time.timeScale = 0;
