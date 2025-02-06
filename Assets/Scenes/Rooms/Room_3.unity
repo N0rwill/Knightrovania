@@ -7281,6 +7281,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -11.459528
       objectReference: {fileID: 0}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeOne
+      value: 
+      objectReference: {fileID: 1499155017}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeTwo
+      value: 
+      objectReference: {fileID: 193847364}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeFive
+      value: 
+      objectReference: {fileID: 566126413}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeFour
+      value: 
+      objectReference: {fileID: 1846482718}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeThree
+      value: 
+      objectReference: {fileID: 265136756}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

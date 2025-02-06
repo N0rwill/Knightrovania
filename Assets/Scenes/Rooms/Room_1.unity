@@ -1610,7 +1610,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.58650327, y: 0.8186604, z: -0.04908114}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1318532394}
   - {fileID: 2109481582}
@@ -7177,22 +7177,62 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1822934964}
+    - target: {fileID: 5308483248257754063, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: PausePanel
+      value: 
+      objectReference: {fileID: 1318532389}
+    - target: {fileID: 5308483248257754063, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: VolumePanel
+      value: 
+      objectReference: {fileID: 2109481581}
+    - target: {fileID: 5308483248257754063, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: ControlPanel
+      value: 
+      objectReference: {fileID: 202659436}
+    - target: {fileID: 5308483248257754063, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: VolumeBackButton
+      value: 
+      objectReference: {fileID: 141572638}
+    - target: {fileID: 5308483248257754063, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: ControlsBackButton
+      value: 
+      objectReference: {fileID: 202659436}
     - target: {fileID: 6456950888632159061, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.5513353
       objectReference: {fileID: 0}
     - target: {fileID: 6456950888632159061, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.9674356
       objectReference: {fileID: 0}
     - target: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.5513353
       objectReference: {fileID: 0}
     - target: {fileID: 6931305770672650312, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4590163
+      value: 2.4915807
       objectReference: {fileID: 0}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeOne
+      value: 
+      objectReference: {fileID: 1432053192}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeTwo
+      value: 
+      objectReference: {fileID: 53038218}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeFive
+      value: 
+      objectReference: {fileID: 1070415144}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeFour
+      value: 
+      objectReference: {fileID: 936759334}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: orangeThree
+      value: 
+      objectReference: {fileID: 980267631}
     - target: {fileID: 7350576488571379960, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_Size.x
       value: 1.2550559
@@ -10728,7 +10768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.45
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -16101,7 +16141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.5
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0

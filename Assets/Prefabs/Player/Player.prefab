@@ -300,6 +300,11 @@ MonoBehaviour:
   playerMovement: {fileID: 156823071151550493}
   playerHealth: 100
   maxHealth: 0
+  orangeOne: {fileID: 0}
+  orangeTwo: {fileID: 0}
+  orangeThree: {fileID: 0}
+  orangeFour: {fileID: 0}
+  orangeFive: {fileID: 0}
   damage: 20
   playerDead: 0
   hurtAudSource: {fileID: 7751790605911116566}
@@ -676,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 4334793035524225606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.4590163, z: -16.393442}
+  m_LocalPosition: {x: 13.194894, y: -2.707827, z: -16.393442}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -718,7 +723,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.75
+  orthographic size: 6.32
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -899,7 +904,7 @@ Transform:
   m_GameObject: {fileID: 6791637596807566129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -13.194894, y: 7.1668434, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -928,7 +933,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4054587171288199523}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4.75
+    OrthographicSize: 6.32
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
