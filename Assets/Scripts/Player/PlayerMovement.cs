@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         speed = 4f;
-        jumpingPower = 14f;
+        jumpingPower = 16f;
         anim = GetComponent<Animator>();
     }
 
