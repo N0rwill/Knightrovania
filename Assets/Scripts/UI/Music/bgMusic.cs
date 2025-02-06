@@ -10,7 +10,7 @@ public class bgMusic : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.3f;
+        audioSource.volume = 1;
     }
 
     private void Awake()
