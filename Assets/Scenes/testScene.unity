@@ -5502,6 +5502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeValue: 300
   timerText: {fileID: 2115361132}
+  GameOverScreen: {fileID: 2128127697}
 --- !u!114 &2115361132
 MonoBehaviour:
   m_ObjectHideFlags: 0

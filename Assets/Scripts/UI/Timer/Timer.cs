@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float timeValue = 300;
     public Text timerText;
+    [SerializeField] GameObject GameOverScreen;
 
     void Update()
     {
@@ -26,6 +27,9 @@ public class Timer : MonoBehaviour
             if(timeDisplay < 0)
             {
                 timeDisplay = 0;
+                Time.timeScale = 0;
+                GameOverScreen.SetActive(true);
+                
             }
 
             float minutes = Mathf.FloorToInt(timeDisplay / 60);
