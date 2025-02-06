@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class WinScreen : MonoBehaviour
 {
     [SerializeField] GameObject GameWinScreen;
-    public void WinScreenActive(Collider2D Player)
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        if (Player.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
             Time.timeScale = 0;
             GameWinScreen.SetActive(true);
