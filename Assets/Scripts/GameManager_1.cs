@@ -12,10 +12,18 @@ public class GameManager_1 : MonoBehaviour
     public float spawnDistance;
     public float spawnDelay;
     public float individualSpawnDelay;
+    Vector3 spawnPosition;
+    public Transform mainCam;
 
     void Start()
     {
         StartCoroutine(SpawnEnemiesLoop1());
+    }
+
+    void Update()
+    {
+        //set spawn point
+        spawnPosition = player.position + Vector3.right * spawnDistance;
     }
 
     //make 3 enemies spawn after delay
@@ -37,8 +45,6 @@ public class GameManager_1 : MonoBehaviour
     {
         if (player == null) return;
 
-        //set spawn point
-        Vector3 spawnPosition = player.position + Vector3.right * spawnDistance;
         //spawn
         GameObject enemy = Instantiate(enemy_1Prefab, spawnPosition, Quaternion.identity);
         

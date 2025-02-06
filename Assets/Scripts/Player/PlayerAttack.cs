@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
     public float throwForce;
     public float throwAngle;
     private bool canThrow = true;
-    public float throwCooldown = 1f;
+    public float throwCooldown = 3f;
 
     void Update()
     {

@@ -33,6 +33,8 @@ public class Enemy_2Movement : MonoBehaviour
             mainCamera = Camera.main;
             Debug.Log("cam set");
         }
+        isMoving = true;
+        anim.SetTrigger("move");
     }
 
     void Update()
@@ -74,8 +76,9 @@ public class Enemy_2Movement : MonoBehaviour
     {
         if (mainCamera != null)
         {
-            float distanceX = Mathf.Abs(transform.position.x - mainCamera.transform.position.x);
-            float distanceY = Mathf.Abs(transform.position.y - mainCamera.transform.position.y);
+            player = gameObject.GetComponent<Transform>();
+            float distanceX = Mathf.Abs(transform.position.x - player.position.x);
+            float distanceY = Mathf.Abs(transform.position.y - player.position.y);
 
             if (distanceX >= despawnDistanceX || distanceY >= despawnDistanceY)
             {

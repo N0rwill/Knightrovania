@@ -9,8 +9,10 @@ public class GameManager_3 : MonoBehaviour
     [SerializeField] private Transform player;
     public Camera mainCamera;
     public float spawnDistance;
+    public float spawnDistance2;
     public float spawnDistanceUp;
     public float spawnDelay;
+    Vector3 spawnPosition;
 
     void Start()
     {
@@ -36,6 +38,25 @@ public class GameManager_3 : MonoBehaviour
         if (player == null) return;
 
         //set spawn point
+        Vector3 spawnPosition = new Vector3(player.position.x + spawnDistance2, mainCamera.transform.position.y + spawnDistanceUp, player.position.z);
+
+        //spawn
+        GameObject enemy = Instantiate(enemy_3Prefab, spawnPosition, Quaternion.identity);
+
+        // Make the enemy face the player
+        Vector3 direction = (player.position - enemy.transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        enemy.transform.rotation = Quaternion.Euler(0, angle, 0);
+
+        Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
+        enemyRb.AddForce(Vector3.up * 1500f);
+    }
+
+    void SpawnEnemyRight()
+    {
+        if (player == null) return;
+
+        //set spawn point
         Vector3 spawnPosition = new Vector3(player.position.x + spawnDistance, mainCamera.transform.position.y + spawnDistanceUp, player.position.z);
 
         //spawn
@@ -47,25 +68,6 @@ public class GameManager_3 : MonoBehaviour
         enemy.transform.rotation = Quaternion.Euler(0, angle, 0);
 
         Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
-        enemyRb.AddForce(Vector3.up * 1000f);
-    }
-
-    void SpawnEnemyRight()
-    {
-        if (player == null) return;
-
-        //set spawn point
-        Vector3 spawnPosition = new Vector3(player.position.x - spawnDistance, mainCamera.transform.position.y + spawnDistanceUp, player.position.z);
-
-        //spawn
-        GameObject enemy = Instantiate(enemy_3Prefab, spawnPosition, Quaternion.identity);
-
-        // Make the enemy face the player
-        Vector3 direction = (player.position - enemy.transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        enemy.transform.rotation = Quaternion.Euler(0, angle, 0);
-
-        Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
-        enemyRb.AddForce(Vector3.up * 1000f);
+        enemyRb.AddForce(Vector3.up * 1500f);
     }
 }
