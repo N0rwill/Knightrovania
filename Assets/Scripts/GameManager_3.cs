@@ -38,7 +38,7 @@ public class GameManager_3 : MonoBehaviour
         if (player == null) return;
 
         //set spawn point
-        Vector3 spawnPosition = new Vector3(player.position.x + spawnDistance2, mainCamera.transform.position.y + spawnDistanceUp, player.position.z);
+        Vector3 spawnPosition = new Vector3(player.position.x + 15f, mainCamera.transform.position.y + spawnDistanceUp, player.position.z);
 
         //spawn
         GameObject enemy = Instantiate(enemy_3Prefab, spawnPosition, Quaternion.identity);
