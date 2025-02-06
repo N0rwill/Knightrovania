@@ -33,6 +33,8 @@ public class Enemy_2Movement : MonoBehaviour
             mainCamera = Camera.main;
             Debug.Log("cam set");
         }
+        isMoving = true;
+        anim.SetTrigger("move");
     }
 
     void Update()
