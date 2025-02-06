@@ -1621,6 +1621,7 @@ MonoBehaviour:
   spawnDistance: 10
   spawnDelay: 5
   individualSpawnDelay: 0.5
+  mainCam: {fileID: 0}
 --- !u!4 &496738913
 Transform:
   m_ObjectHideFlags: 0
@@ -1652,6 +1653,7 @@ MonoBehaviour:
   player: {fileID: 4054587171288199523, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
   mainCamera: {fileID: 3448413093585094802, guid: 59cf30369930a82489a5977f3f9c21f4, type: 3}
   spawnDistance: 6
+  spawnDistance2: 0
   spawnDistanceUp: -6
   spawnDelay: 7
 --- !u!1 &551571429
@@ -3444,7 +3446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 211.1}
+  m_AnchoredPosition: {x: 1, y: 191}
   m_SizeDelta: {x: 1261.5, y: 64.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174084864
