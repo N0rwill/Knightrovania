@@ -3645,7 +3645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.5
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -7233,6 +7233,10 @@ PrefabInstance:
       propertyPath: orangeThree
       value: 
       objectReference: {fileID: 980267631}
+    - target: {fileID: 7205743183377146525, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 457195176}
     - target: {fileID: 7350576488571379960, guid: e9a477079c7af854d93f6f5cb5c690a9, type: 3}
       propertyPath: m_Size.x
       value: 1.2550559
@@ -13750,7 +13754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1698126495
 Transform:
   m_ObjectHideFlags: 0
